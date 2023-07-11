@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools{
         maven 'MAVEN_HOME'
+        git    'git'
     }
     stages{
         stage('Build Maven'){
