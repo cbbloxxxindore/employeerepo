@@ -15,7 +15,7 @@ pipeline {
         stage('Build docker image'){
                     steps{
                         script{
-                            bat 'docker build -t javatechie/devops-integration .'
+                            sh 'docker build -t abhijeetmishu/devops-integration .'
                         }
                     }
                 }
