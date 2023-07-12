@@ -19,5 +19,16 @@ pipeline {
                         }
                     }
                 }
+                stage('Push image to Hub'){
+                            steps{
+                                script{
+                withCredentials([string(credentialsId: 'dockerh-pwd', variable: 'dockerhubpwd')]) {
+                                   sh 'docker login -u abhijeetmishu -p ${dockerhubpwd}'
+
+                }
+                                   sh 'docker push abhijeetmishu/devops-integration'
+                                }
+                            }
+                        }
     }
 }
